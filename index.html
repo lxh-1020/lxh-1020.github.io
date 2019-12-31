@@ -7,13 +7,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body background="bg.jpg" style=" overflow:auto; background-size: 100%; background-repeat: no-repeat;">
+<body background="bg.jpg" style=" overflow:auto; background-size: 100%; background-repeat: no-repeat; height: 100%;">
 <!--天气预报插件-->
 <div class="foot_weather" >
     <iframe width="285" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&color=%2300B0F0&icon=4&py=fuzhou&wind=1&num=1&site=16"></iframe>
 </div>
 <div style=" margin-top: 100px; overflow: auto" >
     <button id="btn_cherish" type="button" class="btn btn-primary" style="color: black; position: center; background-color: palevioletred; display:block;margin:0 auto;">Happy New Day</button>
+    <button id="btn_openmusic"><img src="heart.png" style="height: 50px; width: 50px;"></button>
 </div>
 <div class="progress-rich" style="margin-top: 100px; overflow: auto">
     <div class="progress-bar-rich" role="progressbar" style="width: 100%; background-color: palevioletred;   opacity:0.5;  color:black;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">成为富婆：100%</div>
@@ -29,8 +30,21 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>
+    i = 0;
+    var audio= new Audio("zm.mp3");//这里的路径写上mp3文件在项目中的绝对路径
     $('#btn_cherish').click(function (event) {
         alert("元旦快乐，晓慧呀\n你永远是最美的呀！");
+    });
+    $('#btn_openmusic').click(function (event) {
+        i++;
+        if (i % 2 == 1)
+        {
+            audio.play();
+        }
+        else
+        {
+            audio.stop();
+        }
     })
 </script>
 </body>
